@@ -6,7 +6,7 @@ main() {
 
   Vehicle car = new Car();
   car.horn();
-  car.acelerate(2);
+  car.acelerate(20);
 
   print("--------------------------------");
 
