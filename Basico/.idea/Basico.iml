@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/Exercicio 1/myapp/build" />
       <excludeFolder url="file://$MODULE_DIR$/Exercicio 1/myapp/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/Exercicio 1/myapp/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercicio 7/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercicio 7/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercicio 7/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
