@@ -36,32 +36,22 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child:  Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget> [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
+        body: Center(
+          child:  Wrap(
+            direction: Axis.horizontal,
+              alignment: WrapAlignment.center,
+              spacing: 10.0,
+              children: const <Widget> [
                     Text('Texto 1',
                         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, backgroundColor: Colors.blue)),
                     Padding(padding: EdgeInsets.all(40.0)),
-                    Text('Texto 3',
-                        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, backgroundColor: Colors.blue))
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
                     Text('Texto 2',
+                        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, backgroundColor: Colors.blue)),
+                    Text('Texto 3',
                         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, backgroundColor: Colors.blue)),
                     Padding(padding: EdgeInsets.all(40.0)),
                     Text('Texto 4',
                         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, backgroundColor: Colors.blue))
-                  ],
-                ),
               ]
           ),
         )
