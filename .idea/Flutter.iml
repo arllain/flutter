@@ -7,7 +7,22 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 8/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 8/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 8/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 1/myapp/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 1/myapp/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 1/myapp/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 7/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 7/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 7/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 9/myapp_9/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 9/myapp_9/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 9/myapp_9/.dart_tool" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>
