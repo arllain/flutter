@@ -23,7 +23,7 @@ class AgcsApp extends StatelessWidget {
                   onPressed: () {},
                 ),
             ),
-            Flexible(flex: 6,
+            const Flexible(flex: 6,
                 child: AgcsWidget(),
             )
           ],
