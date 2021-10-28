@@ -15,8 +15,19 @@ class AgcsApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Desafio Flutter Básico"),
         ),
-        body: Center(
-          child: AgcsWidget(),
+        body: Column(
+          children: <Widget>[
+            Flexible(flex: 1,
+                child: ElevatedButton(
+                  child: const Text('Resetar todos os itens', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )),
+                  onPressed: () {},
+                ),
+            ),
+            Flexible(flex: 6,
+                child: AgcsWidget(),
+            )
+          ],
+
         ),
       ),
     );
