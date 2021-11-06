@@ -20,6 +20,12 @@
       <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 9/myapp_9/build" />
       <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 9/myapp_9/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/Basico/Exercicio 9/myapp_9/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/desafio/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/desafio/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Basico/desafio/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Intermediario/desafio/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Intermediario/desafio/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Intermediario/desafio/.dart_tool" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
