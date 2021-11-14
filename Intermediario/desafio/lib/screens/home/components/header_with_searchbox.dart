@@ -22,7 +22,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                 left: kDefaultPadding,
                 right: kDefaultPadding,
                 bottom: kDefaultPadding),
-            height: screenSize.height * 0.1 - 27,
+            height: screenSize.height * 0.1 - 20,
             decoration: const BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(
@@ -31,6 +31,7 @@ class HeaderWithSearchBox extends StatelessWidget {
               ),
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
                   "Plant App",
