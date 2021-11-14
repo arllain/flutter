@@ -12,6 +12,8 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    final allPlants = PlantRepository.allPlants;
+    List<Plant> favoritesPlants = PlantRepository.favoritesPlants;
 
     return SingleChildScrollView(
       child: Column(
@@ -22,13 +24,17 @@ class HomeBody extends StatelessWidget {
               buttonText: "More",
               onPressed: () => navigateToPlantListScreen(
                   context, "Favorite Plants", PlantRepository.favoritesPlants)),
-          const RecomemdedPlantList(),
+          RecomemdedPlantList(
+            plants: favoritesPlants,
+          ),
           TitleWithButtonRow(
               title: "All Plants",
               buttonText: "More",
               onPressed: () => navigateToPlantListScreen(
                   context, "All Plants", PlantRepository.allPlants)),
-          const RecomemdedPlantList(),
+          RecomemdedPlantList(
+            plants: allPlants,
+          ),
         ],
       ),
     );

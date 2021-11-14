@@ -26,10 +26,7 @@ class BodyPlant extends StatelessWidget {
                   childAspectRatio: 0.58,
                 ),
                 itemBuilder: (context, index) => RecomendedPlanCard(
-                      image: plants[index].image,
-                      title: plants[index].name,
-                      country: plants[index].country,
-                      price: plants[index].price.toInt(),
+                      plant: plants[index],
                     )),
           ),
         ),

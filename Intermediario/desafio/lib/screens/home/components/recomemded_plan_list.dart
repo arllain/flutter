@@ -1,3 +1,4 @@
+import 'package:challenge_ui_plant_app/models/plant.dart';
 import 'package:flutter/material.dart';
 
 import 'recommend_plan_card.dart';
@@ -5,34 +6,26 @@ import 'recommend_plan_card.dart';
 class RecomemdedPlantList extends StatelessWidget {
   const RecomemdedPlantList({
     Key? key,
+    required this.plants,
   }) : super(key: key);
+
+  final List<Plant> plants;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          const RecomendedPlanCard(
-            image: "assets/images/image_1.png",
-            title: "Samatha",
-            country: "Russia",
-            price: 445,
-          ),
-          const RecomendedPlanCard(
-            image: "assets/images/image_1.png",
-            title: "Samatha",
-            country: "Russia",
-            price: 445,
-          ),
-          const RecomendedPlanCard(
-            image: "assets/images/image_1.png",
-            title: "Samatha",
-            country: "Russia",
-            price: 445,
-          ),
-        ],
-      ),
+      child: Row(children: getRecomendedPlanCard(plants)),
     );
+  }
+
+  getRecomendedPlanCard(List<Plant> plants) {
+    var cards = <RecomendedPlanCard>[];
+    for (var plant in plants) {
+      cards.add(RecomendedPlanCard(
+        plant: plant,
+      ));
+    }
+    return cards;
   }
 }
