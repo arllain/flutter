@@ -57,7 +57,17 @@ class PlantDetailBody extends StatelessWidget {
                     shape: const RoundedRectangleBorder(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)))),
-                onPressed: () {},
+                onPressed: () {
+                  final snackBar = SnackBar(
+                    content: const Text(
+                        'A funcionalidade de compra não foi implementada!'),
+                    action: SnackBarAction(
+                      label: 'Ok',
+                      onPressed: () {},
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
               ),
             ),
           ],
