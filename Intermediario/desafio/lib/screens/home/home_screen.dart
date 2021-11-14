@@ -12,20 +12,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: HomeBody(),
-      bottomNavigationBar: HomeBottomNagivationBar(),
+      body: const HomeBody(),
     );
   }
 
   AppBar buildAppBar() {
     return AppBar(
-        backgroundColor: kPrimaryColor,
-        elevation: 0,
-        leading: IconButton(
-          icon: SvgPicture.asset("assets/icons/menu.svg"),
-          onPressed: () {}
-        ),
-      );
+      backgroundColor: kPrimaryColor,
+      elevation: 0,
+      leading: IconButton(
+          icon: SvgPicture.asset("assets/icons/menu.svg"), onPressed: () {}),
+    );
   }
 }
-
