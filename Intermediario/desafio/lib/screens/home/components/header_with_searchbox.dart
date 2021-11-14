@@ -13,18 +13,15 @@ class HeaderWithSearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(
-        bottom: kDefaultPadding * 2.5
-      ),
-      height: screenSize.height * 0.1,
+      margin: const EdgeInsets.only(bottom: kDefaultPadding * 2.5),
+      height: screenSize.height * 0.12,
       child: Stack(
-        children: [
+        children: <Widget>[
           Container(
             padding: const EdgeInsets.only(
-              left: kDefaultPadding,
-              right: kDefaultPadding,
-              bottom: kDefaultPadding
-            ),
+                left: kDefaultPadding,
+                right: kDefaultPadding,
+                bottom: kDefaultPadding),
             height: screenSize.height * 0.1 - 27,
             decoration: const BoxDecoration(
               color: kPrimaryColor,
@@ -34,52 +31,50 @@ class HeaderWithSearchBox extends StatelessWidget {
               ),
             ),
             child: Row(
-              children: [
+              children: <Widget>[
                 Text(
                   "Plant App",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold
-                  ),
+                      color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
           ),
-
           Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: Container(
-              alignment: Alignment.center,
-              margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-              height: 54,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0, 10),
-                    blurRadius: 50,
-                    color: kPrimaryColor.withOpacity(0.23),
-                  )
-                ]
-              ),
-              child: Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Search",
-                      hintStyle: TextStyle(
-                        color: kPrimaryColor.withOpacity(0.5),
+                alignment: Alignment.center,
+                margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                height: 54,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0, 10),
+                        blurRadius: 50,
+                        color: kPrimaryColor.withOpacity(0.23),
+                      )
+                    ]),
+                child: Row(children: <Widget>[
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Search",
+                        hintStyle: TextStyle(
+                          color: kPrimaryColor.withOpacity(0.5),
+                        ),
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
                       ),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      suffixIcon: SvgPicture.asset("assets/icons/search.svg")
                     ),
                   ),
-                ),
-            ),
+                  SvgPicture.asset("assets/icons/search.svg")
+                ])),
           ),
         ],
       ),
