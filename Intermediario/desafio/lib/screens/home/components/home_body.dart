@@ -1,19 +1,24 @@
 import 'package:challenge_ui_plant_app/models/plant.dart';
+import 'package:challenge_ui_plant_app/repositories/favorites_plant_repository.dart';
 import 'package:challenge_ui_plant_app/repositories/plant_repository.dart';
 import 'package:challenge_ui_plant_app/screens/plants/plant_list_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'header_with_searchbox.dart';
 import 'recomemded_plan_list.dart';
 import 'title_with_button_row.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
 
   @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    final allPlants = PlantRepository.allPlants;
-    List<Plant> favoritesPlants = PlantRepository.favoritesPlants;
 
     return SingleChildScrollView(
       child: Column(
@@ -23,17 +28,19 @@ class HomeBody extends StatelessWidget {
               title: "Favorite Plants",
               buttonText: "More",
               onPressed: () => navigateToPlantListScreen(
-                  context, "Favorite Plants", PlantRepository.favoritesPlants)),
+                  context,
+                  "Favorite Plants",
+                  context.read<FavoritesPlantRepository>().favoritesPlants)),
           RecomemdedPlantList(
-            plants: favoritesPlants,
+            plants: context.watch<FavoritesPlantRepository>().favoritesPlants,
           ),
           TitleWithButtonRow(
               title: "All Plants",
               buttonText: "More",
-              onPressed: () => navigateToPlantListScreen(
-                  context, "All Plants", PlantRepository.allPlants)),
+              onPressed: () => navigateToPlantListScreen(context, "All Plants",
+                  context.read<PlantRepository>().allPlants)),
           RecomemdedPlantList(
-            plants: allPlants,
+            plants: context.watch<PlantRepository>().allPlants,
           ),
         ],
       ),
