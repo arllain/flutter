@@ -10,8 +10,9 @@ class TitleAndPrice extends StatelessWidget {
     required this.price,
   }) : super(key: key);
 
-  final String title, country;
-  final double price;
+  final String title;
+  final String country;
+  final String price;
 
   @override
   Widget build(BuildContext context) {

@@ -30,7 +30,7 @@ class PlantDetailBody extends StatelessWidget {
                       color: kPrimaryColor.withOpacity(0.29))
                 ],
                 image: DecorationImage(
-                  image: AssetImage(plant.image),
+                  image: NetworkImage(plant.image),
                   fit: BoxFit.cover,
                   alignment: Alignment.centerLeft,
                 ),

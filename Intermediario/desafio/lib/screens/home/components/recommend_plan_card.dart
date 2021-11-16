@@ -49,7 +49,7 @@ class _RecomendedPlanCardState extends State<RecomendedPlanCard> {
                     const EdgeInsets.only(left: 16.0, bottom: 8.0, right: 16.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(widget.plant.image),
+                    image: NetworkImage(widget.plant.image),
                     fit: BoxFit.cover,
                   ),
                 ),
