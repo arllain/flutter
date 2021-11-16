@@ -41,9 +41,7 @@ class PlantDetailBody extends StatelessWidget {
         const Spacer(),
         const Spacer(),
         TitleAndPrice(
-            title: plant.name,
-            country: plant.country,
-            price: plant.price.toInt()),
+            title: plant.name, country: plant.country, price: plant.price),
         const Spacer(),
         Row(
           children: [

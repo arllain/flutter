@@ -16,9 +16,19 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
+  late List<Plant> favoritesPlants;
+  late List<Plant> allPlants;
+  late PlantRepository plantRepository;
+  late FavoritesPlantRepository favoritesPlantRepository;
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+
+    favoritesPlantRepository = context.watch<FavoritesPlantRepository>();
+    plantRepository = context.watch<PlantRepository>();
+
+    allPlants = plantRepository.allPlants;
+    favoritesPlants = favoritesPlantRepository.favoritesPlants;
 
     return SingleChildScrollView(
       child: Column(
@@ -27,20 +37,18 @@ class _HomeBodyState extends State<HomeBody> {
           TitleWithButtonRow(
               title: "Favorite Plants",
               buttonText: "More",
-              onPressed: () => navigateToPlantListScreen(
-                  context,
-                  "Favorite Plants",
-                  context.read<FavoritesPlantRepository>().favoritesPlants)),
+              onPressed: () => navigateToPlantListScreen(context,
+                  "Favorite Plants", favoritesPlantRepository.favoritesPlants)),
           RecomemdedPlantList(
-            plants: context.watch<FavoritesPlantRepository>().favoritesPlants,
+            plants: favoritesPlants,
           ),
           TitleWithButtonRow(
               title: "All Plants",
               buttonText: "More",
-              onPressed: () => navigateToPlantListScreen(context, "All Plants",
-                  context.read<PlantRepository>().allPlants)),
+              onPressed: () => navigateToPlantListScreen(
+                  context, "All Plants", plantRepository.allPlants)),
           RecomemdedPlantList(
-            plants: context.watch<PlantRepository>().allPlants,
+            plants: allPlants,
           ),
         ],
       ),

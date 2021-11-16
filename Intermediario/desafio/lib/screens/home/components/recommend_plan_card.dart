@@ -41,30 +41,6 @@ class _RecomendedPlanCardState extends State<RecomendedPlanCard> {
         width: screenSize.width * 0.4,
         child: Column(
           children: [
-            //Image.asset(widget.plant.image),
-            // Container(
-            //   alignment: Alignment.center,
-            //   child: Image.asset(
-            //     widget.plant.image,
-            //   ),
-            // ),
-            // Container(
-            //     alignment: Alignment.topRight,
-            //     child: IconButton(
-            //         onPressed: () {
-            //           if (context
-            //               .read<FavoritesPlantRepository>()
-            //               .favoritesPlants
-            //               .contains(widget.plant)) {
-            //             addToPlantList(context);
-            //             removeFromFavoriteList(context);
-            //           } else {
-            //             removeFromPlantList(context);
-            //             addToFavoriteList(context);
-            //           }
-            //         },
-            //         icon: getIcon())),
-
             Container(
                 constraints: const BoxConstraints.expand(
                   height: 200.0,
