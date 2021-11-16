@@ -3,6 +3,7 @@ import 'dart:convert' as convert;
 import 'package:challenge_ui_plant_app/models/plant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_retry/http_retry.dart';
 
 class PlantRepository extends ChangeNotifier {
   late List<Plant> _plants = [];
@@ -25,14 +26,16 @@ class PlantRepository extends ChangeNotifier {
     notifyListeners();
   }
 
-  void _setUpPlantList() async {
+  Future<void> _setUpPlantList() async {
     String uri = 'https://study-web-app.herokuapp.com/plants';
-    final response = await http.get(Uri.parse(uri));
-
-    if (response.statusCode == 200) {
-      List<dynamic> body = convert.jsonDecode(response.body);
+    final client = RetryClient(http.Client());
+    try {
+      final response = await client.read(Uri.parse(uri));
+      List<dynamic> body = convert.jsonDecode(response);
       _plants = body.map((dynamic item) => Plant.fromJson(item)).toList();
       notifyListeners();
+    } finally {
+      client.close();
     }
   }
 }
