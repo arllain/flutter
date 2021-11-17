@@ -5,7 +5,8 @@ import 'package:challenge_ui_plant_app/repositories/plant_repository.dart';
 import 'package:challenge_ui_plant_app/screens/detail/plant_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class RecomendedPlanCard extends StatefulWidget {
   final Plant plant;
@@ -42,19 +43,27 @@ class _RecomendedPlanCardState extends State<RecomendedPlanCard> {
         child: Column(
           children: [
             Container(
-                constraints: const BoxConstraints.expand(
-                  height: 200.0,
-                ),
-                padding:
-                    const EdgeInsets.only(left: 16.0, bottom: 8.0, right: 16.0),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(widget.plant.image),
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                constraints: const BoxConstraints.expand(height: 200.0),
                 child: Stack(
                   children: <Widget>[
+                    // Image(image: CachedNetworkImageProvider(widget.plant.image)),
+                    CachedNetworkImage(
+                        key: UniqueKey(),
+                        imageUrl: widget.plant.image,
+                        imageBuilder: (context, imageProvider) => Container(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                              image: imageProvider,
+                              fit: BoxFit.cover,
+                            ))),
+                        placeholder: (_, __) =>
+                            const Center(child: CircularProgressIndicator()),
+                        fadeInDuration: const Duration(milliseconds: 0),
+                        fadeOutDuration: const Duration(milliseconds: 0),
+                        errorWidget: (context, url, error) => Container(
+                              color: Colors.black12,
+                              child: const Icon(Icons.error, color: Colors.red),
+                            )),
                     Positioned(
                         top: 0.0,
                         right: 0.0,
