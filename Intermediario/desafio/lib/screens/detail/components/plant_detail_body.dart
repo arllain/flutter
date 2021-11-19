@@ -1,6 +1,6 @@
 import 'package:challenge_ui_plant_app/constants.dart';
 import 'package:challenge_ui_plant_app/models/plant.dart';
-import 'package:challenge_ui_plant_app/screens/detail/components/title_price.dart';
+import 'package:challenge_ui_plant_app/screens/detail/components/plant_info.dart';
 import 'package:flutter/material.dart';
 
 class PlantDetailBody extends StatelessWidget {
@@ -40,8 +40,7 @@ class PlantDetailBody extends StatelessWidget {
         ),
         const Spacer(),
         const Spacer(),
-        TitleAndPrice(
-            title: plant.name, country: plant.country, price: plant.price),
+        PlantInfo(plant: plant),
         const Spacer(),
         Row(
           children: [
