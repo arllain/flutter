@@ -1,39 +1,41 @@
+import 'dart:collection';
+import 'dart:convert' as convert;
 import 'package:challenge_ui_plant_app/models/plant.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
+import 'package:http_retry/http_retry.dart';
 
-class PlantRepository {
-  static List<Plant> allPlants = [
-    Plant(
-        id: "01",
-        name: "SAMATHA",
-        image: "assets/images/image_1.png",
-        price: 345,
-        country: "Russia"),
-    Plant(
-        id: "02",
-        name: "ANGELICA",
-        image: "assets/images/image_2.png",
-        price: 445,
-        country: "Russia"),
-    Plant(
-        id: "03",
-        name: "ROSE",
-        image: "assets/images/image_3.png",
-        price: 545,
-        country: "Russia")
-  ];
+class PlantRepository extends ChangeNotifier {
+  late List<Plant> _plants = [];
 
-  static List<Plant> favoritesPlants = [
-    Plant(
-        id: "02",
-        name: "ANGELICA",
-        image: "assets/images/image_2.png",
-        price: 445,
-        country: "Russia"),
-    Plant(
-        id: "03",
-        name: "ROSE",
-        image: "assets/images/image_3.png",
-        price: 545,
-        country: "Russia")
-  ];
+  PlantRepository() {
+    _setUpPlantList();
+  }
+
+  UnmodifiableListView<Plant> get allPlants => UnmodifiableListView(_plants);
+
+  addToPlants(Plant plant) {
+    if (!_plants.contains(plant)) {
+      _plants.add(plant);
+    }
+    notifyListeners();
+  }
+
+  remove(Plant plant) {
+    _plants.remove(plant);
+    notifyListeners();
+  }
+
+  Future<void> _setUpPlantList() async {
+    String uri = 'https://study-web-app.herokuapp.com/plants';
+    final client = RetryClient(http.Client());
+    try {
+      final response = await client.read(Uri.parse(uri));
+      List<dynamic> body = convert.jsonDecode(response);
+      _plants = body.map((dynamic item) => Plant.fromJson(item)).toList();
+      notifyListeners();
+    } finally {
+      client.close();
+    }
+  }
 }

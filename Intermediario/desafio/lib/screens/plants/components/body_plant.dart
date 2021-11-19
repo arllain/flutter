@@ -22,7 +22,7 @@ class BodyPlant extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: kDefaultPadding,
-                  crossAxisSpacing: kDefaultPadding,
+                  //crossAxisSpacing: kDefaultPadding,
                   childAspectRatio: 0.58,
                 ),
                 itemBuilder: (context, index) => RecomendedPlanCard(

@@ -1,6 +1,6 @@
 import 'package:challenge_ui_plant_app/constants.dart';
 import 'package:challenge_ui_plant_app/models/plant.dart';
-import 'package:challenge_ui_plant_app/screens/detail/components/title_price.dart';
+import 'package:challenge_ui_plant_app/screens/detail/components/plant_info.dart';
 import 'package:flutter/material.dart';
 
 class PlantDetailBody extends StatelessWidget {
@@ -30,7 +30,7 @@ class PlantDetailBody extends StatelessWidget {
                       color: kPrimaryColor.withOpacity(0.29))
                 ],
                 image: DecorationImage(
-                  image: AssetImage(plant.image),
+                  image: NetworkImage(plant.image),
                   fit: BoxFit.cover,
                   alignment: Alignment.centerLeft,
                 ),
@@ -40,10 +40,7 @@ class PlantDetailBody extends StatelessWidget {
         ),
         const Spacer(),
         const Spacer(),
-        TitleAndPrice(
-            title: plant.name,
-            country: plant.country,
-            price: plant.price.toInt()),
+        PlantInfo(plant: plant),
         const Spacer(),
         Row(
           children: [
@@ -57,7 +54,17 @@ class PlantDetailBody extends StatelessWidget {
                     shape: const RoundedRectangleBorder(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)))),
-                onPressed: () {},
+                onPressed: () {
+                  final snackBar = SnackBar(
+                    content: const Text(
+                        'A funcionalidade de compra não foi implementada!'),
+                    action: SnackBarAction(
+                      label: 'Ok',
+                      onPressed: () {},
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
               ),
             ),
           ],
