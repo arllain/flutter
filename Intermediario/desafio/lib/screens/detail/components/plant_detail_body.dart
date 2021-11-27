@@ -2,6 +2,7 @@ import 'package:challenge_ui_plant_app/constants.dart';
 import 'package:challenge_ui_plant_app/models/plant.dart';
 import 'package:challenge_ui_plant_app/screens/detail/components/plant_info.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PlantDetailBody extends StatelessWidget {
   const PlantDetailBody({Key? key, required this.plant}) : super(key: key);
@@ -17,8 +18,8 @@ class PlantDetailBody extends StatelessWidget {
           children: [
             Expanded(child: Column()),
             Container(
-              height: size.height * 0.6,
-              width: size.width * 0.75,
+              height: size.height * 0.5,
+              width: size.width * 0.70,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(63),
@@ -46,9 +47,9 @@ class PlantDetailBody extends StatelessWidget {
           children: [
             SizedBox(
               width: size.width / 2,
-              height: 84,
+              height: 70,
               child: ElevatedButton(
-                child: const Text("Buy Now"),
+                child: Text(AppLocalizations.of(context)!.buy_now),
                 style: ElevatedButton.styleFrom(
                     primary: kPrimaryColor,
                     shape: const RoundedRectangleBorder(

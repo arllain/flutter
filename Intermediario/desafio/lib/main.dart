@@ -3,9 +3,12 @@ import 'package:challenge_ui_plant_app/repositories/favorites_plant_repository.d
 import 'package:challenge_ui_plant_app/repositories/plant_repository.dart';
 import 'package:challenge_ui_plant_app/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
+import 'l10n/l10n.dart';
 import 'screens/home/home_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +38,13 @@ class PlantApp extends StatelessWidget {
           } else {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+              ],
+              supportedLocales: L10.all,
               title: 'Plant App',
               theme: ThemeData(
                 primaryColor: kPrimaryColor,
