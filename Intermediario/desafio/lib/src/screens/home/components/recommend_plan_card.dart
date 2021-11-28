@@ -1,8 +1,8 @@
 import 'package:challenge_ui_plant_app/constants.dart';
-import 'package:challenge_ui_plant_app/models/plant.dart';
-import 'package:challenge_ui_plant_app/repositories/favorites_plant_repository.dart';
-import 'package:challenge_ui_plant_app/repositories/plant_repository.dart';
-import 'package:challenge_ui_plant_app/screens/detail/plant_detail_screen.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
+import 'package:challenge_ui_plant_app/src/repositories/favorites_plant_repository.dart';
+import 'package:challenge_ui_plant_app/src/repositories/plant_repository.dart';
+import 'package:challenge_ui_plant_app/src/screens/detail/plant_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';

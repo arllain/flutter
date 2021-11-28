@@ -1,6 +1,6 @@
 import 'package:challenge_ui_plant_app/constants.dart';
-import 'package:challenge_ui_plant_app/models/plant.dart';
-import 'package:challenge_ui_plant_app/screens/detail/components/plant_info.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
+import 'package:challenge_ui_plant_app/src/screens/detail/components/plant_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

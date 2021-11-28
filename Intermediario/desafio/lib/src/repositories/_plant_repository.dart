@@ -1,6 +1,6 @@
 import 'dart:collection';
 import 'dart:convert' as convert;
-import 'package:challenge_ui_plant_app/models/plant.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_retry/http_retry.dart';

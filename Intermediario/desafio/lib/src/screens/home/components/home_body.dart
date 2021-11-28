@@ -1,7 +1,7 @@
-import 'package:challenge_ui_plant_app/models/plant.dart';
-import 'package:challenge_ui_plant_app/repositories/favorites_plant_repository.dart';
-import 'package:challenge_ui_plant_app/repositories/plant_repository.dart';
-import 'package:challenge_ui_plant_app/screens/plants/plant_list_screen.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
+import 'package:challenge_ui_plant_app/src/repositories/favorites_plant_repository.dart';
+import 'package:challenge_ui_plant_app/src/repositories/plant_repository.dart';
+import 'package:challenge_ui_plant_app/src/screens/plants/plant_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'header_with_searchbox.dart';
@@ -10,8 +10,8 @@ import 'title_with_button_row.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeBody extends StatefulWidget {
-  const HomeBody({Key? key}) : super(key: key);
-
+  const HomeBody({Key? key, required this.plantList}) : super(key: key);
+  final List<Plant> plantList;
   @override
   State<HomeBody> createState() => _HomeBodyState();
 }
@@ -28,7 +28,6 @@ class _HomeBodyState extends State<HomeBody> {
 
     favoritesPlantRepository = context.watch<FavoritesPlantRepository>();
     plantRepository = context.watch<PlantRepository>();
-
     allPlants = plantRepository.allPlants;
     favoritesPlants = favoritesPlantRepository.favoritesPlants;
 
