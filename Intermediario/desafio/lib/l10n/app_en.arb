@@ -28,6 +28,11 @@
   "@search": {
     "description": "",
     "type": "String"
+  },
+  "splash_text": "FLUTTER PLANT APP UI",
+  "@splash_text": {
+    "description": "",
+    "type": "String"
   }  
 }
 

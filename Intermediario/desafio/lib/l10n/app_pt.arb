@@ -4,5 +4,6 @@
   "all_plants": "Todas as Plantas",
   "more": "mais",
   "buy_now":"compre agora",
-  "search": "Pesquisar"
+  "search": "Pesquisar",
+  "splash_text": "APP PLANTAS UI FLUTTER"  
 }

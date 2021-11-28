@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,13 +23,13 @@ class SplashScreen extends StatelessWidget {
                 flex: 2,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Padding(
+                  children: <Widget>[
+                    const Padding(
                       padding: EdgeInsets.only(top: 10.0),
                     ),
                     Text(
-                      "FLUTTER PLANT APP UI",
-                      style: TextStyle(
+                      AppLocalizations.of(context)!.splash_text,
+                      style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 75.0),

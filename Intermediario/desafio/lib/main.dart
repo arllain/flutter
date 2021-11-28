@@ -33,17 +33,16 @@ class PlantApp extends StatelessWidget {
         future: Init.instance.initialize(),
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const MaterialApp(
-                debugShowCheckedModeBanner: false, home: SplashScreen());
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: getLocalizationsDelegates,
+              supportedLocales: L10.all,
+              home: const SplashScreen(),
+            );
           } else {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              localizationsDelegates: const [
-                AppLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-              ],
+              localizationsDelegates: getLocalizationsDelegates,
               supportedLocales: L10.all,
               title: 'Plant App',
               theme: ThemeData(
@@ -56,6 +55,15 @@ class PlantApp extends StatelessWidget {
             );
           }
         });
+  }
+
+  List<LocalizationsDelegate<dynamic>> get getLocalizationsDelegates {
+    return const [
+      AppLocalizations.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+    ];
   }
 }
 
