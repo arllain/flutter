@@ -1,6 +1,7 @@
 import 'package:challenge_ui_plant_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
@@ -34,7 +35,7 @@ class HeaderWithSearchBox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Plant App",
+                  AppLocalizations.of(context)!.title,
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
@@ -65,7 +66,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: "Search",
+                        hintText: AppLocalizations.of(context)!.search,
                         hintStyle: TextStyle(
                           color: kPrimaryColor.withOpacity(0.5),
                         ),

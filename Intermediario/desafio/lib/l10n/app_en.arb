@@ -1,0 +1,39 @@
+{
+  "title": "Plant App",
+  "@title": {
+    "description": "Title for the Plant application",
+    "type": "String"
+  },
+  "favorites": "Favorite Plants",
+  "@favorites": {
+    "description": "",
+    "type": "String"
+  },
+  "all_plants": "All Plants",
+  "@all_plants": {
+    "description": "",
+    "type": "String"
+  },
+  "more": "more",
+  "@more": {
+    "description": "",
+    "type": "String"
+  },
+  "buy_now": "Buy Now",
+  "@buy_now": {
+    "description": "",
+    "type": "String"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "",
+    "type": "String"
+  },
+  "splash_text": "FLUTTER PLANT APP UI",
+  "@splash_text": {
+    "description": "",
+    "type": "String"
+  }  
+}
+
+
