@@ -1,14 +1,15 @@
 import 'package:challenge_ui_plant_app/constants.dart';
-import 'package:challenge_ui_plant_app/repositories/favorites_plant_repository.dart';
-import 'package:challenge_ui_plant_app/repositories/plant_repository.dart';
-import 'package:challenge_ui_plant_app/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'l10n/l10n.dart';
-import 'screens/home/home_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'src/repositories/favorites_plant_repository.dart';
+import 'src/repositories/plant_repository.dart';
+import 'src/screens/home/home_screen.dart';
+import 'src/screens/splash/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,4 +1,4 @@
-import 'package:challenge_ui_plant_app/models/plant.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
 import 'package:flutter/material.dart';
 
 import 'recommend_plan_card.dart';

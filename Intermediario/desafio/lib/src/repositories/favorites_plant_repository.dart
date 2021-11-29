@@ -1,6 +1,5 @@
 import 'dart:collection';
-
-import 'package:challenge_ui_plant_app/models/plant.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
 import 'package:flutter/cupertino.dart';
 
 class FavoritesPlantRepository extends ChangeNotifier {

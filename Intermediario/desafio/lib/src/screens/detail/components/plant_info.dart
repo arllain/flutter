@@ -1,7 +1,6 @@
-import 'package:challenge_ui_plant_app/models/plant.dart';
+import 'package:challenge_ui_plant_app/constants.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
 import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
 
 class PlantInfo extends StatelessWidget {
   const PlantInfo({

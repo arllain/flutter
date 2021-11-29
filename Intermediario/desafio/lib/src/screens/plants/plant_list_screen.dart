@@ -1,7 +1,8 @@
-import 'package:challenge_ui_plant_app/models/plant.dart';
-import 'package:challenge_ui_plant_app/screens/plants/components/body_plant.dart';
+import 'package:challenge_ui_plant_app/src/models/plant.dart';
 import 'package:flutter/material.dart';
 import 'package:challenge_ui_plant_app/constants.dart';
+
+import 'components/body_plant.dart';
 
 class PlantListScreen extends StatelessWidget {
   const PlantListScreen({
